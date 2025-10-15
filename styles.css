@@ -1,5 +1,5 @@
 /* ======================= */
-/* ESTILOS GENERALES    */
+/* ESTILOS GENERALES       */
 /* ======================= */
 body {
     margin: 0;
@@ -9,7 +9,7 @@ body {
 }
 
 /* ======================= */
-/* BARRA DE NAVEGACIÓN    */
+/* BARRA DE NAVEGACIÓN     */
 /* ======================= */
 .navbar {
     background-color: #C5B4E3;
@@ -21,7 +21,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1400px; /* Ancho ampliado para la nueva versión */
+    max-width: 1400px;
     margin: 0 auto;
 }
 
@@ -78,9 +78,8 @@ body {
     border: 1px solid #333;
 }
 
-
 /* ======================= */
-/* SECCIÓN HERO         */
+/* SECCIÓN HERO            */
 /* ======================= */
 .hero-section {
     position: relative;
@@ -102,7 +101,7 @@ body {
 }
 
 .cta-box {
-    background-color: rgba(197, 180, 227, 0.9); /* Fondo con transparencia */
+    background-color: rgba(197, 180, 227, 0.9);
     padding: 30px 40px;
     margin-left: 10%;
     border-radius: 8px;
@@ -142,9 +141,8 @@ body {
     background-color: #9a7946;
 }
 
-
 /* ======================= */
-/* SECCIONES DE CONTENIDO */
+/* SECCIONES DE CONTENIDO  */
 /* ======================= */
 .content-section {
     padding: 50px 5%;
@@ -169,7 +167,7 @@ body {
 
 .category-item {
     text-align: center;
-    flex-basis: 30%; /* Cada item ocupa aprox un tercio */
+    flex-basis: 30%;
 }
 
 .category-item img {
@@ -190,7 +188,6 @@ body {
     font-weight: 600;
 }
 
-
 /* --- Estilos de Colección de Productos --- */
 .product-grid {
     display: grid;
@@ -209,7 +206,7 @@ body {
 }
 
 .product-card:hover {
-    box-shadow: 0 6px B12px rgba(0,0,0,0.15);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 
 .product-image-container {
@@ -218,7 +215,7 @@ body {
 
 .product-card img {
     width: 100%;
-    height: 300px; /* Altura fija para las imágenes */
+    height: 300px;
     object-fit: cover;
     display: block;
 }
@@ -252,11 +249,11 @@ body {
 }
 
 .badge.sale {
-    background-color: #e74c3c; /* Rojo */
+    background-color: #e74c3c;
 }
 
 .badge.new {
-    background-color: #27ae60; /* Verde */
+    background-color: #27ae60;
 }
 
 /* --- Botón "Show More" --- */
@@ -280,4 +277,57 @@ body {
 .show-more-btn:hover {
     background-color: #333;
     color: #fff;
+}
+
+/* ===================================== */
+/* ESTILOS PARA LA NUEVA FUNCIONALIDAD   */
+/* ===================================== */
+
+/* --- Estilos para el botón "Añadir al carrito" --- */
+.add-to-cart-btn {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    width: 90%;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #B08D57;
+}
+
+.add-to-cart-btn:active {
+    transform: scale(0.98);
+}
+
+/* --- Estilos para el contador del carrito --- */
+.cart-link {
+    position: relative;
+    display: inline-block;
+}
+
+.cart-counter {
+    position: absolute;
+    top: -8px;
+    right: -12px;
+    background-color: #e74c3c;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 0.7em;
+    font-weight: bold;
+    border: 1px solid white;
+    min-width: 10px;
+    text-align: center;
+    transform: scale(0);
+    transition: transform 0.2s ease-in-out;
+}
+
+.cart-counter.visible {
+    transform: scale(1);
 }

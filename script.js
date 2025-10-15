@@ -239,21 +239,34 @@
 // Espera a que todo el contenido del HTML se cargue
 document.addEventListener('DOMContentLoaded', function() {
 
-    // 1. Selecciona el botón del carrito por su ID
-    const cartButton = document.getElementById('cart-button');
+    const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+    const cartCounter = document.getElementById('cart-counter');
+    let itemsInCart = 0;
 
-    // 2. Verifica si el botón realmente existe
-    if (cartButton) {
-        // 3. Añade un "escuchador de eventos" que se activa con un 'click'
-        cartButton.addEventListener('click', function(event) {
-            
-            // Previene que el enlace '#' recargue la página
-            event.preventDefault(); 
-            
-            // 4. Muestra una alerta simple
-            alert('Has hecho clic en el carrito. ¡Aquí puedes agregar la lógica para mostrar los productos!');
-            
-        });
+    function updateCartCounter() {
+        cartCounter.textContent = itemsInCart;
+        if (itemsInCart > 0) {
+            cartCounter.classList.add('visible');
+        } else {
+            cartCounter.classList.remove('visible');
+        }
     }
 
+    addToCartButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            itemsInCart++;
+            updateCartCounter();
+
+            const productName = button.getAttribute('data-product-name');
+            console.log(`${productName} fue añadido al carrito.`);
+            
+            button.textContent = '¡Añadido!';
+            setTimeout(() => {
+                button.textContent = 'Añadir al carrito';
+            }, 1500);
+
+        });
+    });
+    
+    updateCartCounter();
 });
