@@ -236,3 +236,24 @@
 // }
 // obtenerUsuarioConSeguridad();\
 
+// Espera a que todo el contenido del HTML se cargue
+document.addEventListener('DOMContentLoaded', function() {
+
+    // 1. Selecciona el botón del carrito por su ID
+    const cartButton = document.getElementById('cart-button');
+
+    // 2. Verifica si el botón realmente existe
+    if (cartButton) {
+        // 3. Añade un "escuchador de eventos" que se activa con un 'click'
+        cartButton.addEventListener('click', function(event) {
+            
+            // Previene que el enlace '#' recargue la página
+            event.preventDefault(); 
+            
+            // 4. Muestra una alerta simple
+            alert('Has hecho clic en el carrito. ¡Aquí puedes agregar la lógica para mostrar los productos!');
+            
+        });
+    }
+
+});
